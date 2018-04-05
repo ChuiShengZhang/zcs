@@ -12,6 +12,7 @@ public class qy extends JFrame{
 	private JButton b1,b2,b3,b4= null;
 	private JTextField b5 = null;
 	public qy(){
+		//github
 		//Container c  = this.getContentPane();
 		setTitle("sssssssss");
 		setSize(600,300);
