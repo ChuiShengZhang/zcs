@@ -18,6 +18,7 @@ public class ArrayListDemo {
 	public static void main(String[] args){
 		ArrayList<String> al=new ArrayList<String>();
 		//Ìí¼ÓÊı¾İ
+		//github
 		al.add("java01");
 		al.add("java02");
 		al.add("java03");
