@@ -1,0 +1,6 @@
+聊天室聊天规则
+	1.ADD#nameIP 通知所有用户nameIP上线
+	2.DEL#nameIP 通知所有用户nameIP下线
+	3.ALL#messger 群发message
+	4.PRI#nameIP#message 私聊
+	
