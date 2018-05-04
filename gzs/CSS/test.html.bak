@@ -1,0 +1,101 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<style>
+			*{box-sizing:border-box;}
+			body{margin:0;background-color:#6FF;}
+			div.menu{
+				background-color:#666;
+				overflow:auto;
+				float:right;
+				width:100%;
+				position:fixed;
+				z-index:1;
+			}
+			div a, .da{text-decoration:none;display:inline-block;padding:20px;float:left;color:white;}
+			div a.active{background-color:#3C0;}
+			.menu a:hover:not(.active){background-color:black;}
+
+			ul li{list-style-type:none;width:25%;}
+			li a.list{background-color:#09F;}
+			li a{padding:15px;width:350%;color:black;background-color:white;margin-bottom:15%;}
+			li a:hover:not(.list){background-color:#f1f1f1;}
+				
+			div.center::after{content:"";clear:both;display:table;overflow:hidden;}
+			div.left{width:25%;float:left;height:100%;clear:both;margin-top:80px;}
+			div.right{width:72.5%;float:right;}
+			div.header{background-color:#3CF;height:20%;width:95%;text-align:center;padding:50px;margin-top:80px;
+				font-size:50px;color:white;}
+			div p.tit{font-size:40px;}
+			div.footer{background-color:#666;height:12%;text-align:center;color:white;
+				font-size:20px;padding:2%;}
+			
+			.dropdown{display:inline-block;}
+			div.dropdown div.dropdown-content{position:absolute;top:58px;left:248px;min-width:100px;display:none;background-color:#f1f1f1;}
+			.dropdown-content a{display:block;width:100%;padding:15px 20px;color:red;}
+			div dropdown div.dropdown-content a:hover{background-color:#f1f1f1;}
+			.dropdown:hover .da{background-color: #111;}
+			.dropdown:hover .dropdown-content{display:block;z-index:1;position:fixed;}
+
+		</style>	
+	</head>
+	<body>
+		<div class="menu">
+			<a class="active" href="#" target="_blank">主页</a>
+			<a href="#" target="_blank">新闻</a>
+			<a href="#" target="_blank">联系我们</a>
+			<div class="dropdown">
+				<a href="#" class="da" target="_blank">关于我们</a>
+				<div class="dropdown-content">
+					<a href="#">校园简介</a>
+					<a href="#">专业介绍</a>
+					<a href="#">班级风采</a>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<div class="left">
+				<ul class="uls">
+					<li><a href="#">The Flight</a></li>
+					<li><a href="#" class="list">The City</a></li>
+					<li><a href="#">The Island</a></li>
+					<li><a href="#">The Food</a></li>
+					<li><a href="#">The People</a></li>
+					<li><a href="#">The History</a></li>
+					<li><a href="#">The Oceans</a></li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="header">The City</div>
+				<div>
+					<p class="tit">Chania</p>
+					<p>Chaia is the capital of the Chania region on the island of Great. The city can be divided in two parts,
+						the old town and the modern city.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+					<p>You will learn more about responsive web pages in a later chapter.</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			底部文本
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<html>
+  <head>
+	<meta charset="utf-8"></meta>
+  </head>
+  <body>
+	<select id="s1" onChange="addt(this.value);">
+	  <option value="none">--请选择--</option>
+	  <option value="上海">上海市</option>
+	  <option value="南昌">南昌市</option>
+	</select>
+	<input type="button" onClick="r();">
+	<select id="s2"></select>
+  <script type="text/javascript">
+	function r(){
+	  alert(":");
+	}
+	function addt(val){
+	alert("@@");
+	var data=new Array(2);
+	data[0]=["上海市","浦东新区","静安区","闸北区","杨浦区","宝山区","黄埔区"];
+	data[1]=["南昌市","东湖区","西湖区","青山湖区","青云谱区","红谷滩新区","新建区"];
+	alert(":::");
+	  var s1=document.getElementById("s1");
+	  var s2=document.getElementById("s2");
+	  var city=s1.value;
+	  var coun=s2.value;
+	  //判断s2s是否有option 如果有则删除
+	  var s2s=s2.getElementsByTagName("option");
+	  for(var i=0;i<s2s.length;i++){
+	    s2.removeChild(s2s[i]);
+		i--;
+	  }
+	  //判断传递过来的值是否与数组第一位相
+	  for(var j=0;j<data.length;j++){
+	  alert(data[j]);
+	    var arr1=data[j];
+		var f=arr1[0];
+	    if(val==f){
+		  for(var k=1;k<arr1.length;k++){
+		  alert(arr1[k]);
+		    var op=document.createElement("option");
+			var te=document.createTextNode(arr1[k]);
+			op.appendChild(te);
+			s2.appendChild(op);
+		  }
+		}
+	  }
+	}
+  </script>
+  </body>
+</html>

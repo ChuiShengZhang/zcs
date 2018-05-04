@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>.div{width:300px;height:20%;border:0px solid #000000;float:left}</style>
+	</head>
+	<body>
+		<div class="div">
+			<lable for="webname">ÍøÕ¾Ãû:</lable>
+			<input type="text" id="webname" name="webname"><br/>
+			<lable for="weburl">&nbsp;&nbsp;&nbsp;ÍøÖ·:</lable>
+			<input type="text" id="weburl" name="weburl"><br/>
+			<div align="center"><input type="button" value="Ìí¼Ó" onclick="add1();">
+			<input type="button" value="É¾³ıÈ«²¿" onclick="removeAll1();"></div>
+			<hr/>
+			<lable for="searchname">ÍøÕ¾Ãû:</lable>
+			<input type="text" id="searchname" name="serachname">
+			<input type="button" value="ËÑË÷" onclick="searchByKey();">
+			<div id="searchresultid1"></div><hr>
+
+			<lable for="searchname">&nbsp;&nbsp;&nbsp;&nbsp;ÍøÖ·:</lable>
+			<input type="text" id="searchurl" name="serachurl">
+			<input type="button" value="ËÑË÷" onclick="searchByUrl();">
+			<div id="searchresultid2"><br/></div>
+		</div>
+		<div id="list" class="div">
+	<script>
+		showAll1();
+		function add1(){
+			var webname = document.getElementById("webname").value;
+			var weburl = document.getElementById("weburl").value;
+			localStorage.setItem(webname,weburl);
+			alert("Ìí¼Ó³É¹¦");
+			showAll1();
+		}
+		function searchByKey(){
+			var name1 = document.getElementById("searchname").value;
+			var show1 = document.getElementById("searchresultid1");
+			var result1 = localStorage.getItem(name1);
+			if(result1==null)
+				show1.innerHTML = "ÕÒ²»µ½¶ÔÓ¦ÍøÕ¾";
+			show1.innerHTML = "ÍøÕ¾£º"+name1+"<br/>ÍøÖ·£º"+result1;	
+		}
+		function showAll1(){
+			var list1 = document.getElementById("list");
+			var table1 = "<table border='1'><tr><td>ÍøÕ¾Ãû</td><td>ÍøÖ·</td></tr>";
+			for(var i = 0;i<localStorage.length;i++){
+				var name1 = localStorage.key(i);
+				var url1 = localStorage.getItem(name1);
+				table1+="<tr><td>"+name1+"</td><td>"+url1+"</td></tr>";
+			}
+			table1+="</table>";
+			list.innerHTML = table1;
+		}
+		function removeAll1(){
+			localStorage.clear();
+			showAll1();
+		}
+		function searchByUrl(){
+			var url1 = document.getElementById("searchurl").value;
+			var result1 = document.getElementById("searchresultid2");
+			for(var i = 0;i<localStorage.length;i++){
+				var u = localStorage.getItem(localStorage.key(i));
+				if(u==url1){
+					var rurl= localStorage.key(i);
+				}
+			}
+			result1.innerHTML = "ÍøÕ¾£º"+rurl+"<br/>ÍøÖ·:"+url1;
+		}
+	</script>
+	</body>
+</html>

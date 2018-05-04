@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-3.3.1.min.js"></script>
+		<style>
+			ul li{
+				width: 100px;
+				display: inline-block;
+				text-align: center;
+				overflow: hidden;
+			}
+			.title{
+				background-color: #FF4585;
+				padding: 10px 0;
+			}
+			#li2{
+				position: absolute;
+				left: 150px;
+			}
+			.body,.body2{
+				display: none;
+				background-color: #f1f1f1;
+			}
+			.body a,.body2 a{
+				text-decoration: none;
+				display: block;
+				width: 100px;
+				color: green;
+				padding: 5px 0;
+				margin-bottom: 5px;
+			}
+			.body a:hover,.body2 a:hover{
+				background-color: #bbb;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$("#li1").mouseover(function(){
+					$(".body").show();
+				});
+				$("#li1").mouseout(function(){
+					$(".body").hide();
+				});
+				$("#li2").mouseover(function(){
+					$(".body2").show();
+				});
+				$("#li2").mouseout(function(){
+					$(".body2").hide();
+				});
+			});
+
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li id="li1">
+				<div class="title">校园</div>
+				<div class="body">
+					<a href="#">校园简介</a>
+					<a href="#">专业介绍</a>
+					<a href="#">班级风采</a>
+				</div>
+			</li>
+			<li id="li2">
+				<div class="title">2</div>
+				<div class="body2">
+					<a href="#">aaa</a>
+					<a href="#">bbb</a>
+					<a href="#">ccc</a>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<script>
+		localStorage1();
+		sessionStorage1();
+		function localStorage1(){
+			if(typeof(localStorage)!="undefined"){
+				if(localStorage.pagecount){
+					localStorage.pagecount = Number(localStorage.pagecount)+1;
+				}else{
+					localStorage.pagecount = 1;	
+				}
+			}else{
+				document.write("您的浏览器不支持");
+			}
+			document.write("local浏览次数"+Number(localStorage.pagecount)+"<br>");
+		}
+		function sessionStorage1(){
+			//var sessionCount = sessionStorage.pagecount;
+			if(typeof(sessionStorage)!="undefined"){
+				if(sessionStorage.pagecount){
+					sessionStorage.pagecount= Number(sessionStorage.pagecount)+1;
+				}else{
+					sessionStorage.pagecount= 1;
+				}
+			}else{
+				document.write("您的浏览器不支持");
+			}
+			document.write("session浏览次数:"+sessionStorage.pagecount);
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<div id="times"></div>
+		<script type="text/javascript">
+		function time1(){
+			var date = new Date();
+			var div1 = document.getElementById("times");
+			div1.innerHTML = date.toLocaleTimeString();
+		}
+		document.setInterval(function(){ time1() },1000);
+	</script>
+	</body>
+</html>

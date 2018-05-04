@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input type="button" id="cookieid" value="cookie" onclick="cookieCounter1();">
+		<div id="showcookieid"></div>
+		<input type="button" id="sessionid" value="session" onclick="sessionCounter1();" >
+		<div id="showsessionid"><div>
+	<script>
+		function cookieCounter1(){
+			if(typeof(localStorage)!="undefined"){
+				if(localStorage.clickcount){
+					localStorage.clickcount=Number(localStorage.clickcount)+1;
+				}else{
+					localStorage.clickcount = 1;
+				}	
+			}
+			document.getElementById("showcookieid").innerHTML = "cookie你点了"+localStorage.clickcount+"次+<br>不删除cookie文件一直存在";
+		}
+		function sessionCounter1(){
+			if(typeof(sessionStorage)!="undefined"){
+				if(sessionStorage.clickcount){
+					sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+				}else{
+					sessionStorage.clickcount = 1;
+				}
+			}
+			document.getElementById("showsessionid").innerHTML = "session你点击了"+sessionStorage.clickcount+"次<br>只在当前页有效";
+		}
+	</script>
+	</body>
+</html>

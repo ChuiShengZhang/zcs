@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../jquery-easyui-1.5.5.1/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../iquery-easyui-1.5.5.1/themes/icon.css">
+		<script src="../jquery-easyui-1.5.5.1/jquery.min.js"></script>
+		<script src="../jquery-easyui-1.5.5.1/jquery.easyui.min.js"></script>
+	</head>
+	<body>
+		<a class="easyui-linkbutton" href="javacript:void(0);" onclick="alt();">¾¯¸æ¿ò</a>
+		<a class="easyui-linkbutton" href="#" onclick="conf();">È·ÈÏ¿ò</a>
+			<script>
+			function alt(){
+				$.messager.alert("my title","my msg","info");
+			}
+			function conf(){
+				$.messager.confirm("my confirm","delete??????",function (r){
+					if(r){
+						$.messager.alert("yi shan chu","?","error");
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

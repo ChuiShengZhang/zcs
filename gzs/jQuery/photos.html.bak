@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-3.3.1.min.js"></script>
+		<style>
+			div li{
+				display: inline-block;
+			}
+			.li1,.li2{
+				margin: 10px;
+				border-radius: 15px;
+				width: 150px;
+				height: 150px;
+				box-shadow:10px 10px 5px #888888;
+				opacity: 0.9;
+			}
+			.li2{
+				border-radius: 80px 15px;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$(".li1").mouseover(function(){
+					$(this).animate({width:'200px',height:'200px',opacity:'1',borderRadius:'25%'},'500');
+				});	
+				$(".li1").mouseout(function(){
+					$(this).animate({width:'150px',height:'150px',opacity:'0.9',borderRadius:'15px'});
+				});		
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<div >
+				<li><img class="li1" src="../image/demo1.jpg"></li>
+				<li><img class="li1" src="../image/demo2.jpg"></li>
+				<li><img class="li1" src="../image/demo3.jpg"></li>
+				<li><img class="li1" src="../image/demo4.jpg"></li>
+			</div>
+			<div>
+				<li><img class="li1" src="../image/img_fjords_wide.jpg"></li>
+				<li><img class="li1" src="../image/img_mountains_wide.jpg"></li>
+				<li><img class="li1" src="../image/img_nature_wide.jpg"></li>
+				<li><img class="li1" src="../image/wt.jpg"></li>
+			</div>
+			<div>
+				<li><img class="li1" src="../image/demo2.jpg"></li>
+				<li><img class="li1" src="../image/demo1.jpg"></li>
+				<li><img class="li1" src="../image/img_nature_wide.jpg"></li>
+				<li><img class="li1" src="../image/img_fjords_wide.jpg"></li>
+			</div>
+			<div>
+				<li><img class="li1" src="../image/wt.jpg"></li>
+				<li><img class="li1" src="../image/demo4.jpg"></li>
+				<li><img class="li1" src="../image/img_mountains_wide.jpg"></li>
+				<li><img class="li1" src="../image/demo3.jpg"></li>
+			</div>
+		</ul>
+	</body>
+</html>

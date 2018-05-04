@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>注册</title>
+		<style>
+			.rcegist{
+				position: absolute;
+				left: 25%;
+				width: 500px;
+			}
+			.form{
+				width:50%;
+				margin:60px auto;
+				font-size:25px;
+				font-family:"Comic Sans MS", cursive, sans-serif;
+				border:3px outset #aaaaaa;
+			}
+			.table{
+				margin:10%;
+			}
+			.btn{
+				width:120px;
+				height:50px;
+				margin-left:40px;
+				background-color:#09F;
+			}
+			span{
+				color:red;
+				font-size:20px;
+			}
+			fieldset{
+				border:2px outset #09F;
+				margin:10px;
+			}
+			td a{
+				color: #F60;
+				font-size: 15px;
+				text-decoration: none;
+			}
+		</style>
+		<script>
+			function checkTel(){
+				var tel = document.forms["registForm"]["tel"].value;
+				if(tel == null || tel == ""){
+					alert("电话号码不能为空,请重新输入!");
+					return false;
+				}else{
+					 var telRegex = /^[0-9]{11}$/;
+					 if(!telRegex.test(tel)){
+						alert("电话号码格式有误,请重新输入!");
+						return false;
+					 }
+				}
+			}
+			function checkForm(){
+				var name = document.forms["registForm"]["userName"].value;
+				var pwd = document.forms["registForm"]["pwd"].value;
+				var repwd = document.forms["registForm"]["repwd"].value;
+				var email = document.forms["registForm"]["email"].value;
+				if(name == null || name == ""){
+					alert("请输入用户名!");
+					return false;
+				}
+				if(pwd == null || pwd == ""){
+					alert("请输入密码!");
+					return false;
+				}else{
+					if(repwd == null || repwd == ""){
+						alert("请输入确认密码!");
+						return false;
+					}
+				}
+				if(pwd != repwd){
+					alert("两次输入的密码不一致！请重新输入!");
+					return false;
+				}
+				if(email == null || email == ""){
+					alert("请输入邮箱!");
+					return false;
+				}else{
+					var emailRegex= /^[a-zA-Z0-9]+@[a-z0-9]*\.[a-z]*$/;
+					if(!emailRegex.test(email)){
+						alert("邮箱格式错误,请重新输入!");
+						return false;
+					}
+				}
+				checkTel();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="regist">
+		<form class="form" name="registForm" action="formdiy.html" method="post" onsubmit="return checkForm();">
+			<fieldset>
+				<legend>注册</legend>
+					<table class="table"  cellpadding="5" cellspacing="8">
+						<tr>
+							<td colspan="2" align="right"><a href="#">已有账号？去登陆</a></td>
+						</tr>
+						<tr>
+							<td align="right"><span>*</span>用户名：</td>
+							<td><input type="text" name="userName" autofocus></td>
+						</tr>
+						<tr>
+							<td align="right"><span>*</span>密码：</td>
+							<td><input type="password" name="pwd"></td>
+						</tr>
+						<tr>
+							<td><span>*</span>重输密码：</td>
+							<td><input type="password" name="repwd"></td>
+						</tr>
+						<tr>
+							<td align="right">性别：</td>
+							<td>
+								<input type="radio" name="sex" value="man" checked="true">男
+								<input type="radio" name="sex" value"female">女
+							</td>
+						</tr>
+						<tr>
+							<td>出生日期：</td>
+							<td><input type="date"></td>
+						</tr>
+						<tr>
+							<td align="right">地区：</td><td><input list="dl">
+							<datalist id="dl">
+								<option value="北京"><option value="上海">
+								<option value="广州"><option value="深圳">
+							</datalist>
+							</td>
+						</tr>
+						<tr>
+							<td><span>*</span>电子邮件：</td>
+							<td><input type="email" name="email"></td>
+						</tr>
+							<tr><td><span>*</span>电话号码：</td>
+							<td><input type="tel" name="tel"></td>
+						</tr>
+						<tr>
+							<td align="right">验证码：</td>
+							<td><input type="text" style="width:110px;">
+							<img src="../image/validateCode.gif" title="点击更换验证码">
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2">
+								<input class="btn" width="20" type="reset" value="重置">
+								<input class="btn" type="submit" value="立即注册" >
+							</td>
+						</tr>
+			</table>
+			</fieldset>
+		</form>
+		</div>
+	</body>
+</html>

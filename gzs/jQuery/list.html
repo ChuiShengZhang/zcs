@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-3.3.1.min.js"></script>
+		<style>
+			.panel{
+				background-color: #Df4585;
+				display: inline-block;
+				width: 100px;
+				clear: both;
+				text-align: center;
+			}
+			.body{
+				background-color: #bbb;
+				display: none;
+				width: 100px;
+			}
+			.panel a{
+				display: block;
+				width: 100px;
+				text-decoration: none;
+			}
+			.panel a:hover{
+				background-color: green;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$(".panel").mouseover(function(){
+					$(".body").show();	
+				});	
+				$(".panel").mouseout(function(){
+					$(".body").hide();	
+				});	
+			});
+		</script>
+	</head>
+	<body>
+		<div class="panel">
+			<div class="tiele">下拉菜单</div>
+			<div class="body">
+				<a href="#">下拉a</a>
+				<a href="#">下拉b</a>
+				<a href="#">下拉c</a>
+			</div>
+		</div>
+	</body>
+</html>

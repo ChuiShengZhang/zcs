@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<style>
+			/*link正常状态的超链接
+			  visited访问过的超链接
+			  hover鼠标经过是的超链接
+			  active超链接被点击的哪一刻
+			*/
+			a.a1:link{color:red;font-size:50px;}
+			a.a1:visited{color:blue;font-size:100px;}
+			a.a1:hover{color:yellow;font-size:200ppx;}
+			a.a1:active{color:black;font-size:300px;}
+
+			a.a2:link{
+				display:block;
+				background-color:red;
+				width:80px;
+				padding:200px;
+				text-decoration:none;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="link">
+		<a class="a1" href="http://sina.cn" target="_blank">这是一个超链接</a><br/>
+		<a class="a2" href="http://baidu.com" target="_blank">百度超链接</a>
+		</p>
+	</body>
+</html>

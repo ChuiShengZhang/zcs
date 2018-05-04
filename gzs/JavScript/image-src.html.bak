@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+	<title>╣фещ</title>
+</head>
+<body>
+	<img id="bulb" src="../image/pic_bulboff.gif" onclick="changeImage();">
+	<script>
+	function changeImage(){
+		src1 = document.getElementById("bulb");
+		if(src1.src.match("bulbon")){
+			src1.src = "../image/pic_bulboff.gif";
+		}else{
+			src1.src = "../image/pic_bulbon.gif";
+		}
+	}
+	</script>
+</body>

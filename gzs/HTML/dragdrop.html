@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>#div1{width:200px;height:200px;border:2px solid blue;}</style>
+	</head>
+	<body>
+		
+		<div id="div1" ondrop="drop1(event);" ondragover="dragOver(event);" ></div>
+		<img id="img1" src="image/java.jpg" draggable="true" ondragstart="drag1(event);" width="200" height="150" />
+		<script>
+		function drag1(ev){
+			ev.dataTransfer.setData("imgid",ev.target.id);
+		}
+		function dragOver(ev){
+			ev.preventDefault();
+		}
+		function drop1(ev){
+			ev.preventDefault();
+			ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("imgid")));
+		}
+		</script>
+	</body>
+</html>

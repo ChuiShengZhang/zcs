@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>树下拉菜单</title>
+	</head>
+	<style>
+		.dropdown{
+			border: 2px outset #bbb;
+			width: 300px;
+			height: 50px;
+			text-align: center;
+			margin: 30px auto;
+			transition: 0.8s;
+			overflow: hidden;
+		}
+		.dropdown.open{
+			height: 180px;
+		}
+		.title{
+			background-color: #00c37E;
+			width: 300px;
+			height: 50px;
+			cursor: pointer;
+			z-index: 10;
+			overflow: hidden;
+		}
+		.title:after{
+			content: "^";
+			color: red;
+			float: right;
+		}
+		.body{
+			height: 200px;
+			position: relative;
+			top: -21px;
+			background-color: white;
+			padding: 0;
+		}
+		.body h4{
+			font-weight: 200;
+		}
+		.body h4:before{
+			content: "~";
+			position: relative;
+			left: -25px;
+			font-size: 20px;
+			color: #00c37E;
+		}
+		.body h4:after{
+			content: "zcs";
+			position: relative;
+			top: 20px;
+			right: -90px;
+		}
+	</style>
+	<body>
+		<div class="dropdown">
+			<div class="title">点点点点点点</div>
+			<div class="body">
+				<h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+				</h4>
+			</div>
+		</div>
+		<div class="dropdown">
+			<div class="title">点点点点点点</div>
+			<div class="body"><h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</h4></div>
+		</div>
+		<div class="dropdown">
+			<div class="title">点点点点点点</div>
+			<div class="body"><h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</h4></div>
+		</div>
+		<div class="dropdown">
+			<div class="title">点点点点点点</div>
+			<div class="body"><h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</h4></div>
+		</div>
+	<script>
+		;!(function (w,d){
+			var i = 0;
+			var titles = d.querySelectorAll(".title");
+			var len = titles.length;
+			for(;i<len;i++){
+				titles[i].onclick = function(e){
+					for(var j=0;j<len;j++){
+						if(this != titles[j]){
+							titles[j].parentNode.className = titles[j].parentNode.className.replace(" open","");
+						}
+					}
+					var n=this.parentNode.className;
+					if(n.match("open")==null){
+						this.parentNode.className = n+" open";
+					}else{
+						this.parentNode.className = n.replace(" open","");
+					}
+				};
+			}
+		})(this,document);
+	</script>
+	</body>
+</html>

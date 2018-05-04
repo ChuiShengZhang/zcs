@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>图片轮播</title>
+		<style>
+			.container{
+				position: absolute;
+				left: 25%;
+			}
+			.box{
+				display: none;
+			}
+			.imgno{
+				color: white;
+				position: absolute;
+				top: 3px;
+				left: 10px;
+			}
+			.text{
+				color: white;
+				position: absolute;
+				left: 460px;
+				bottom: 30px;
+			}
+			.pre,.next{
+				color: white;
+				font-size: 30px;
+				font-weight: bold;
+				text-align: center;
+				text-decoration: none;
+				padding: 10px 5px;
+				position: absolute;
+				top: 120px;
+				transition: 0.6s;
+				border-radius: 0 5px 5px 0;
+			}
+			.next{
+				right: 0;
+				border-radius: 5px 0 0 5px;
+			}
+			.pre:hover,.next:hover,.dot:hover{
+				background-color: black;
+			}
+			.dots{
+				text-align: center;
+			}
+			.dot{
+				background-color: #bbb;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				margin: 0 3px;
+				display: inline-block;
+				transition: 0.8s;
+			}
+			.active{
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<div class="imgno">1 / 3</div>
+				<img class="img" src="../image/img_mountains_wide.jpg" alt="nature">
+				<div class="text">图片文本</div>
+			</div>
+			<div class="box">
+				<div class="imgno">2 / 3</div>
+				<img class="img" src="../image/img_fjords_wide.jpg" alt="nature">
+				<div class="text">图片文本</div>
+			</div>
+			<div class="box">
+				<div class="imgno">3 / 3</div>
+				<img class="img" src="../image/img_nature_wide.jpg" alt="nature">
+				<div class="text">图片文本</div>
+			</div>
+			<a href="#" class="pre" onclick="clickNext(-1);">&lt</a>
+			<a href="#" class="next" onclick="clickNext(1)">&gt</a>
+
+			<div class="dots">
+				<span class="dot" onclick="clickOn(1);"></span>
+				<span class="dot" onclick="clickOn(2);"></span>
+				<span class="dot" onclick="clickOn(3);"></span>
+			</div>
+		</div>
+		<script>
+			var ind = 1;
+			showImg(ind);
+			function clickOn(idx){
+				showImg(ind=idx);
+			}
+			function clickNext(idx){
+				showImg(ind+=idx);
+			}
+			function showImg(index){
+				var boxs = document.getElementsByClassName("box");
+				var dots = document.getElementsByClassName("dot");
+				if(index>boxs.length){
+					ind = 1;
+				}
+				if(index<1){
+					ind = boxs.length;
+				}
+				//将每个box的display设置为none 即隐藏
+				for(var i=0;i<boxs.length;i++){
+					boxs[i].style.display = "none";
+				}
+				//去掉每个点的active类
+				for(var i=0;i<dots.length;i++){
+					dots[i].className = dots[i].className.replace(" active","");
+				}
+				boxs[idx-1].style.display = "block";//将相应的box显示
+				dots[idx-1].className+=" active";//为当前box对应的点添加active类
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<ul id="ulid">
+			<li>西施</li>
+			<li>貂蝉</li>
+			<li id="yyh">杨玉环</li>
+			<li>王昭君</li>
+		</ul>
+		<input id="inid" type="text" value=""><input type="button" value="add" onclick="bb();">
+		<script type="text/javascript">
+			function bb(){
+				var in1 = document.getElementById("inid");
+				var ul = document.getElementById("ulid");
+				var old = document.getElementById("yyh");
+				var li = document.createElement("li");
+				var text1 = document.createTextNode(in1.value);
+				li.appendChild(text1);
+				ul.appendChild(li);
+				document.insertBefore(old,li);	
+			}
+		</script>
+	</body>
+</html>

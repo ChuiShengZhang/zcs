@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>注册</title>
+		<style>
+			#form{width:30%;margin:60px auto;font-size:25px;font-family:"Comic Sans MS", cursive, sans-serif;
+			border:3px outset #aaaaaa;}
+			#table{margin:10%;}#{float:right;}
+			.btn{width:120px;height:50px;margin-left:40px;background-color:#09F;}
+			span{color:red; font-size:20px;}
+			fieldset{border:2px outset #09F;margin:10px;}
+		</style>
+	</head>
+	<body>
+		<div>
+		<form id="form" action="formdiy.html" method="post">
+			<fieldset>
+			<legend>注册</legend>
+			<table id="table"  cellpadding="5" cellspacing="8">
+			<tr><td colspan="2" align="right"><a href="#" style="color:#F60;font-size:15px">已有账号？去登陆</a></td></tr>
+			<tr><td align="right"><span>*</span>用户名：</td><td><input type="text" autofocus></td></tr>
+			<tr><td align="right"><span>*</span>密码：</td><td><input type="password"></td></tr>
+			<tr><td><span>*</span>重输密码：</td><td><input type="password"></td></tr>
+			<tr><td align="right">性别：</td><td><input type="radio" name="sex" value="man" checked="true">男
+			<input type="radio" name="sex" value"female">女</td></tr>
+			<tr><td>出生日期：</td><td><input type="date"></td></tr>
+			<tr><td align="right">地区：</td><td><input list="dl">
+				<datalist id="dl"><option value="北京"><option value="上海">
+				<option value="广州"><option value="深圳"></datalist></td></tr>
+			<tr><td><span>*</span>电子邮件：</td><td><input type="email"></td></tr>
+			<tr><td><span>*</span>电话号码：</td><td><input type="tel"></td></tr>
+			<tr><td align="right">验证码：</td><td><input type="text" style="width:110px;">
+				<img src="image/validateCode.gif" title="点击更换验证码"></td></tr>
+			<tr align="center"><td colspan="2"><input class="btn" width="20" type="reset" value="重置">
+				<input class="btn" type="submit" value="立即注册"></td></tr>
+			</table>
+			</fieldset>
+		</form>
+		</div>
+	</body>
+</html>

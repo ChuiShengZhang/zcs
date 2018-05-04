@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<div align="center">
+			<div>
+				<input type="button" value="播放/暂停" onclick="play();">
+				<input type="button" value="大" onclick="big();">
+				<input type="button" value="中" onclick="mid();">
+				<input type="button" value="小" onclick="small();">
+			</div>
+			<video width="600" id="videoid" controls autoplay>
+				<source src="video/wwmxd.mp4" type="video/mp4"></source>
+			</video>
+		</div>
+		<script type="text/javascript">
+			var myVideo = document.getElementById("videoid");
+			function play(){
+				if(myVideo.paused)
+					myVideo.play();
+				else
+					myVideo.pause();
+			}
+			function big(){
+				myVideo.width=1500;
+			}
+			function mid(){
+				myVideo.width=900;
+			}
+			function small(){
+				myVideo.width=400;
+			}
+		</script>
+	</body>
+</html>
